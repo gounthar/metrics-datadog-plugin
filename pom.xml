@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.jenkins-ci.plugins</groupId>
-        <artifactId>plugin</artifactId>
-        <version>4.20</version>
-        <relativePath />
-    </parent>
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>4.51</version>
+    <relativePath />
+  </parent>
 
-    <groupId>io.jenkins.plugins</groupId>
-    <artifactId>metrics-datadog</artifactId>
-    <version>${revision}${changelist}</version>
-    <packaging>hpi</packaging>
+  <groupId>io.jenkins.plugins</groupId>
+  <artifactId>metrics-datadog</artifactId>
+  <version>${revision}${changelist}</version>
+  <packaging>hpi</packaging>
 
-    <properties>
-        <revision>1.1</revision>
-        <changelist>-SNAPSHOT</changelist>
-        <jenkins.version>2.302</jenkins.version>
-        <java.level>8</java.level>
-    </properties>
+  <properties>
+    <revision>1.1</revision>
+    <changelist>-SNAPSHOT</changelist>
+    <jenkins.version>2.346.3</jenkins.version>
+  </properties>
 
-    <name>Metrics DataDog Plugin</name>
-    <description>This plugin is a Metrics Plugin reporter for DataDog.</description>
+  <name>Metrics DataDog Plugin</name>
+  <description>This plugin is a Metrics Plugin reporter for DataDog.</description>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>https://opensource.org/licenses/MIT</url>
-        </license>
-    </licenses>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-weekly</artifactId>
+        <version>2612.v3d6a_2128c0ef</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>metrics</artifactId>
-            <version>4.0.2.8</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
